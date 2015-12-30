@@ -1,6 +1,8 @@
 # TextViewLabel
 A simple TextView that is styled like a label
 
+![screenshot](screenshot.jpg)
+
 # Install
 To add this library to your project, you must add the JitPack repo to your root build.gradle file...
 
