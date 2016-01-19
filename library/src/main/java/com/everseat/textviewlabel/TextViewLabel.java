@@ -73,9 +73,9 @@ public class TextViewLabel extends TextView {
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     labelBounds.left = 0;
-    labelBounds.right = getWidth();
+    labelBounds.right = getMeasuredWidth();
     labelBounds.top = 0;
-    labelBounds.bottom = getHeight();
+    labelBounds.bottom = getMeasuredHeight();
   }
 
   @Override
