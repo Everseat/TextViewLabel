@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 public class TextViewLabel extends TextView {
   private float cornerRadius = Integer.MIN_VALUE;
+  private int labelColor = Color.TRANSPARENT;
   private RectF labelBounds = new RectF();
   private Paint labelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -57,7 +59,16 @@ public class TextViewLabel extends TextView {
    * @param color The color of the label
    */
   public void setLabelColor(int color) {
-    labelPaint.setColor(color);
+    labelColor = color;
+    invalidate();
+  }
+
+  /**
+   * Retrieves the current label color.
+   * @return The color of the label
+   */
+  public int getLabelColor() {
+    return labelColor;
   }
 
   /**
@@ -89,6 +100,7 @@ public class TextViewLabel extends TextView {
   }
 
   private void drawLabel(Canvas canvas, float cornerRadius) {
+    labelPaint.setColor(labelColor);
     canvas.drawRoundRect(labelBounds, cornerRadius, cornerRadius, labelPaint);
   }
 }

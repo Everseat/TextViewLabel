@@ -40,4 +40,13 @@
     android:textSize="14sp"
     android:textColor="#FFF"
     app:labelColor="@color/purple"/>
+
+  <com.everseat.textviewlabel.TextViewLabel
+    android:id="@+id/label4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World!"
+    android:textSize="14sp"
+    android:textColor="#000"/>
+
 </LinearLayout>
